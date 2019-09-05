@@ -4,9 +4,10 @@ import PackageDescription
 
 let package = Package(
     name: "CreditCardFormatter",
-    dependencies: [
-
+    products: [
+        .library(name: "CreditCardFormatter", targets: ["CreditCardFormatter"])
     ],
+    dependencies: [],
     targets: [
         .target(
             name: "CreditCardFormatter",
