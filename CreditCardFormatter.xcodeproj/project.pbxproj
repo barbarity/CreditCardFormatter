@@ -10,6 +10,7 @@
 		6503428923212FE000F5E01C /* CreditCardFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6503427F23212FE000F5E01C /* CreditCardFormatter.framework */; };
 		6503428E23212FE000F5E01C /* CreditCardFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6503428D23212FE000F5E01C /* CreditCardFormatterTests.swift */; };
 		6503429023212FE000F5E01C /* CreditCardFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503428223212FE000F5E01C /* CreditCardFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6503429B2321458500F5E01C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6503429A2321458500F5E01C /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,8 @@
 		6503428823212FE000F5E01C /* CreditCardFormatterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditCardFormatterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6503428D23212FE000F5E01C /* CreditCardFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFormatterTests.swift; sourceTree = "<group>"; };
 		6503428F23212FE000F5E01C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6503429A2321458500F5E01C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6503429F2321471B00F5E01C /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +56,10 @@
 		6503427523212FE000F5E01C = {
 			isa = PBXGroup;
 			children = (
-				6503428123212FE000F5E01C /* CreditCardFormatter */,
-				6503428C23212FE000F5E01C /* CreditCardFormatterTests */,
+				6503429F2321471B00F5E01C /* Package.swift */,
+				6503429A2321458500F5E01C /* README.md */,
+				6503428123212FE000F5E01C /* Sources */,
+				6503428C23212FE000F5E01C /* Tests */,
 				6503428023212FE000F5E01C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,22 +73,54 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6503428123212FE000F5E01C /* CreditCardFormatter */ = {
+		6503428123212FE000F5E01C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6503429C2321465B00F5E01C /* CreditCardFormatter */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6503428C23212FE000F5E01C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6503429D2321466900F5E01C /* CreditCardFormatterTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		6503429C2321465B00F5E01C /* CreditCardFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				6503429E2321467F00F5E01C /* Supporting Files */,
+			);
+			path = CreditCardFormatter;
+			sourceTree = "<group>";
+		};
+		6503429D2321466900F5E01C /* CreditCardFormatterTests */ = {
+			isa = PBXGroup;
+			children = (
+				6503428D23212FE000F5E01C /* CreditCardFormatterTests.swift */,
+				650342A0232197BA00F5E01C /* Supporting Files */,
+			);
+			path = CreditCardFormatterTests;
+			sourceTree = "<group>";
+		};
+		6503429E2321467F00F5E01C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				6503428223212FE000F5E01C /* CreditCardFormatter.h */,
 				6503428323212FE000F5E01C /* Info.plist */,
 			);
-			path = CreditCardFormatter;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6503428C23212FE000F5E01C /* CreditCardFormatterTests */ = {
+		650342A0232197BA00F5E01C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6503428D23212FE000F5E01C /* CreditCardFormatterTests.swift */,
 				6503428F23212FE000F5E01C /* Info.plist */,
 			);
-			path = CreditCardFormatterTests;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6503429B2321458500F5E01C /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +386,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CreditCardFormatter/Info.plist;
+				INFOPLIST_FILE = "Sources/CreditCardFormatter/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -373,7 +411,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CreditCardFormatter/Info.plist;
+				INFOPLIST_FILE = "Sources/CreditCardFormatter/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -393,7 +431,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8DKBGWEGR;
-				INFOPLIST_FILE = CreditCardFormatterTests/Info.plist;
+				INFOPLIST_FILE = "Tests/CreditCardFormatterTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,7 +449,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8DKBGWEGR;
-				INFOPLIST_FILE = CreditCardFormatterTests/Info.plist;
+				INFOPLIST_FILE = "Tests/CreditCardFormatterTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
