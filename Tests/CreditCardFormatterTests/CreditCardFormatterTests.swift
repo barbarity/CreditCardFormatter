@@ -26,29 +26,94 @@
 //
 
 import XCTest
-@testable import CreditCardFormatter
+import CreditCardFormatter
 
-class CreditCardFormatterTests: XCTestCase {
+final class CreditCardFormatterTests: XCTestCase {
+    var sut: CreditCardFormatter!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        sut = CreditCardFormatter()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testEmptyStringReturnsEmptyFormattedString() {
+        XCTAssert(sut.formattedString(from: "") == "")
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testWhitesSpacesAreDeleted() {
+        XCTAssert(sut.formattedString(from: "    ") == "")
+        XCTAssert(sut.formattedString(from: "   1") == "1")
+        XCTAssert(sut.formattedString(from: "  12  ") == "12")
+        XCTAssert(sut.formattedString(from: "  4  3") == "43")
     }
 
+    func testWeirdCharactersAreFiltered() {
+        XCTAssert(sut.formattedString(from: "#@@1#&$&#4") == "14")
+    }
+
+    func testDefaultConfiguration() {
+        XCTAssert(sut.formattedString(from: "1289") == "1289")
+        XCTAssert(sut.formattedString(from: "12891") == "1289 1")
+        XCTAssert(sut.formattedString(from: "128911") == "1289 11")
+        XCTAssert(sut.formattedString(from: "1289117") == "1289 117")
+        XCTAssert(sut.formattedString(from: "12891173") == "1289 1173")
+        XCTAssert(sut.formattedString(from: "128911738") == "1289 1173 8")
+        XCTAssert(sut.formattedString(from: "1289117385") == "1289 1173 85")
+        XCTAssert(sut.formattedString(from: "12891173853") == "1289 1173 853")
+        XCTAssert(sut.formattedString(from: "128911738536") == "1289 1173 8536")
+        XCTAssert(sut.formattedString(from: "1289117385361") == "1289 1173 8536 1")
+        XCTAssert(sut.formattedString(from: "12891173853613") == "1289 1173 8536 13")
+        XCTAssert(sut.formattedString(from: "12891173853613") == "1289 1173 8536 13")
+        XCTAssert(sut.formattedString(from: "128911738536131") == "1289 1173 8536 131")
+        XCTAssert(sut.formattedString(from: "1289117385361319") == "1289 1173 8536 1319")
+    }
+
+    func testStringsTooLongAreCut() {
+        XCTAssert(sut.formattedString(from: "12891173853613195") == "1289 1173 8536 1319")
+        XCTAssert(sut.formattedString(from: "12891173853613195123") == "1289 1173 8536 1319")
+        XCTAssert(sut.formattedString(from: "1289117385361319512354") == "1289 1173 8536 1319")
+    }
+
+    func testWeirdCharactersDontAffectCount() {
+        XCTAssert(sut.formattedString(from: "128911738@53613195") == "1289 1173 8536 1319")
+        XCTAssert(sut.formattedString(from: "12dfgdf8911738@5361sdfds3195") == "1289 1173 8536 1319")
+    }
+
+    func testBlocksWithDifferentRange() {
+        sut.blocks = [1, 2, 3, 4]
+
+        XCTAssert(sut.formattedString(from: "1") == "1")
+        XCTAssert(sut.formattedString(from: "11") == "1 1")
+        XCTAssert(sut.formattedString(from: "112") == "1 12")
+        XCTAssert(sut.formattedString(from: "1121") == "1 12 1")
+        XCTAssert(sut.formattedString(from: "11212") == "1 12 12")
+        XCTAssert(sut.formattedString(from: "112123") == "1 12 123")
+        XCTAssert(sut.formattedString(from: "1121231") == "1 12 123 1")
+        XCTAssert(sut.formattedString(from: "11212312") == "1 12 123 12")
+        XCTAssert(sut.formattedString(from: "112123123") == "1 12 123 123")
+        XCTAssert(sut.formattedString(from: "1121231234") == "1 12 123 1234")
+    }
+
+    func testDifferentDelimiter() {
+        sut.delimiter = "-"
+        XCTAssert(sut.formattedString(from: "1289") == "1289")
+        XCTAssert(sut.formattedString(from: "12891") == "1289-1")
+        XCTAssert(sut.formattedString(from: "128911") == "1289-11")
+        XCTAssert(sut.formattedString(from: "1289117") == "1289-117")
+        XCTAssert(sut.formattedString(from: "12891173") == "1289-1173")
+        XCTAssert(sut.formattedString(from: "128911738") == "1289-1173-8")
+        XCTAssert(sut.formattedString(from: "1289117385") == "1289-1173-85")
+        XCTAssert(sut.formattedString(from: "12891173853") == "1289-1173-853")
+        XCTAssert(sut.formattedString(from: "128911738536") == "1289-1173-8536")
+        XCTAssert(sut.formattedString(from: "1289117385361") == "1289-1173-8536-1")
+        XCTAssert(sut.formattedString(from: "12891173853613") == "1289-1173-8536-13")
+        XCTAssert(sut.formattedString(from: "12891173853613") == "1289-1173-8536-13")
+        XCTAssert(sut.formattedString(from: "128911738536131") == "1289-1173-8536-131")
+        XCTAssert(sut.formattedString(from: "1289117385361319") == "1289-1173-8536-1319")
+    }
 }
