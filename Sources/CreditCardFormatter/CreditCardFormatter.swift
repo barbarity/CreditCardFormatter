@@ -25,18 +25,24 @@
 //  SOFTWARE.
 //
 
+import Foundation
+
 public class CreditCardFormatter {
-    public var delimiter = " "
-    public var blocks: [Int] = [4, 4, 4, 4]
-    public var maxLength: Int {
-        return blocks.reduce(0, +)
+    public var delimiter: String = " "
+    public var formatters: [CreditCardFormat] = [VISACreditCardFormat()]
+    public var defaultBlocks: [Int] = [4, 4, 4, 4]
+
+    public init() { }
+
+    private func removeNonDecimalDigits(from string: String) -> String {
+        let characterSet: CharacterSet = .decimalDigits
+        return string.removingCharacters(in: characterSet.inverted)
     }
 
-    public init() {}
-
     public func formattedString(from string: String) -> String {
-        let characterSet: CharacterSet = .decimalDigits
-        let strippedString = string.removingCharacters(in: characterSet.inverted)
+        let strippedString = removeNonDecimalDigits(from: string)
+
+        let blocks = formatters.first(where: { $0.shouldFormat(strippedString) })?.blocks ?? defaultBlocks
 
         var invertedBlocks = Array(blocks.reversed())
         var formattedString = ""
@@ -54,6 +60,12 @@ public class CreditCardFormatter {
         }
 
         return formattedString
+    }
+
+    public func isValid(_ string: String) -> Bool {
+        let strippedString = removeNonDecimalDigits(from: string)
+        guard let formatter = formatters.first(where: { $0.shouldFormat(strippedString) }) else { return false }
+        return formatter.isValid(strippedString)
     }
 }
 

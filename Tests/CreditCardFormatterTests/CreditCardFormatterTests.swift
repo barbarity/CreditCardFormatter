@@ -84,21 +84,6 @@ final class CreditCardFormatterTests: XCTestCase {
         XCTAssert(sut.formattedString(from: "12dfgdf8911738@5361sdfds3195") == "1289 1173 8536 1319")
     }
 
-    func testBlocksWithDifferentRange() {
-        sut.blocks = [1, 2, 3, 4]
-
-        XCTAssert(sut.formattedString(from: "1") == "1")
-        XCTAssert(sut.formattedString(from: "11") == "1 1")
-        XCTAssert(sut.formattedString(from: "112") == "1 12")
-        XCTAssert(sut.formattedString(from: "1121") == "1 12 1")
-        XCTAssert(sut.formattedString(from: "11212") == "1 12 12")
-        XCTAssert(sut.formattedString(from: "112123") == "1 12 123")
-        XCTAssert(sut.formattedString(from: "1121231") == "1 12 123 1")
-        XCTAssert(sut.formattedString(from: "11212312") == "1 12 123 12")
-        XCTAssert(sut.formattedString(from: "112123123") == "1 12 123 123")
-        XCTAssert(sut.formattedString(from: "1121231234") == "1 12 123 1234")
-    }
-
     func testDifferentDelimiter() {
         sut.delimiter = "-"
         XCTAssert(sut.formattedString(from: "1289") == "1289")
@@ -115,5 +100,15 @@ final class CreditCardFormatterTests: XCTestCase {
         XCTAssert(sut.formattedString(from: "12891173853613") == "1289-1173-8536-13")
         XCTAssert(sut.formattedString(from: "128911738536131") == "1289-1173-8536-131")
         XCTAssert(sut.formattedString(from: "1289117385361319") == "1289-1173-8536-1319")
+    }
+
+    func testVISACardFormatter() {
+        XCTAssert(sut.formattedString(from: "4418895787771915") == "4418 8957 8777 1915")
+    }
+
+    func testVISACardValidity() {
+        let visaCardFormat = VISACreditCardFormat()
+
+        XCTAssert(visaCardFormat.isValid("4720165545628457"))
     }
 }

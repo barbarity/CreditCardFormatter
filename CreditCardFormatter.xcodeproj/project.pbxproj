@@ -12,6 +12,9 @@
 		6503429023212FE000F5E01C /* CreditCardFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503428223212FE000F5E01C /* CreditCardFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6503429B2321458500F5E01C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6503429A2321458500F5E01C /* README.md */; };
 		650342A42321B46B00F5E01C /* CreditCardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342A32321B46B00F5E01C /* CreditCardFormatter.swift */; };
+		650342A6232849A000F5E01C /* CreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342A5232849A000F5E01C /* CreditCardFormat.swift */; };
+		650342A92329201500F5E01C /* VISACreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342A82329201500F5E01C /* VISACreditCardFormat.swift */; };
+		650342AB2329213700F5E01C /* AmericanExpressCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,9 @@
 		6503429A2321458500F5E01C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6503429F2321471B00F5E01C /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		650342A32321B46B00F5E01C /* CreditCardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFormatter.swift; sourceTree = "<group>"; };
+		650342A5232849A000F5E01C /* CreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFormat.swift; sourceTree = "<group>"; };
+		650342A82329201500F5E01C /* VISACreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISACreditCardFormat.swift; sourceTree = "<group>"; };
+		650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericanExpressCreditCardFormat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,10 @@
 		6503429C2321465B00F5E01C /* CreditCardFormatter */ = {
 			isa = PBXGroup;
 			children = (
-				6503429E2321467F00F5E01C /* Supporting Files */,
 				650342A32321B46B00F5E01C /* CreditCardFormatter.swift */,
+				650342A5232849A000F5E01C /* CreditCardFormat.swift */,
+				650342A723291FEB00F5E01C /* Formats */,
+				6503429E2321467F00F5E01C /* Supporting Files */,
 			);
 			path = CreditCardFormatter;
 			sourceTree = "<group>";
@@ -124,6 +132,15 @@
 				6503428F23212FE000F5E01C /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		650342A723291FEB00F5E01C /* Formats */ = {
+			isa = PBXGroup;
+			children = (
+				650342A82329201500F5E01C /* VISACreditCardFormat.swift */,
+				650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */,
+			);
+			path = Formats;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				650342AB2329213700F5E01C /* AmericanExpressCreditCardFormat.swift in Sources */,
 				650342A42321B46B00F5E01C /* CreditCardFormatter.swift in Sources */,
+				650342A6232849A000F5E01C /* CreditCardFormat.swift in Sources */,
+				650342A92329201500F5E01C /* VISACreditCardFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
