@@ -27,10 +27,9 @@
 
 import Foundation
 
-public class CreditCardFormatter {
+public final class CreditCardFormatter {
     public var delimiter: String = " "
-    public var formatters: [CreditCardFormat] = [VISACreditCardFormat()]
-    public var defaultBlocks: [Int] = [4, 4, 4, 4]
+    public var formatters: [CreditCardFormat] = [VISACreditCardFormat(), UnknownCreditCardFormat()]
 
     public init() { }
 
@@ -39,32 +38,19 @@ public class CreditCardFormatter {
         return string.removingCharacters(in: characterSet.inverted)
     }
 
+    private func selectFormatter(from string: String) -> CreditCardFormat? {
+        return formatters.first(where: { $0.shouldFormat(string) })
+    }
+
     public func formattedString(from string: String) -> String {
         let strippedString = removeNonDecimalDigits(from: string)
-
-        let blocks = formatters.first(where: { $0.shouldFormat(strippedString) })?.blocks ?? defaultBlocks
-
-        var invertedBlocks = Array(blocks.reversed())
-        var formattedString = ""
-        var subIdx = 0
-        guard var currentBlock = invertedBlocks.popLast() else { return formattedString }
-        for character in strippedString {
-            if subIdx == currentBlock {
-                guard let nextBlock = invertedBlocks.popLast() else { return formattedString }
-                formattedString.append(delimiter)
-                subIdx = 0
-                currentBlock = nextBlock
-            }
-            formattedString.append(character)
-            subIdx += 1
-        }
-
-        return formattedString
+        guard let formatter = selectFormatter(from: strippedString) else { return strippedString }
+        return formatter.formattedString(from: strippedString, delimiter: delimiter)
     }
 
     public func isValid(_ string: String) -> Bool {
         let strippedString = removeNonDecimalDigits(from: string)
-        guard let formatter = formatters.first(where: { $0.shouldFormat(strippedString) }) else { return false }
+        guard let formatter = selectFormatter(from: strippedString) else { return false }
         return formatter.isValid(strippedString)
     }
 }

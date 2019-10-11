@@ -1,8 +1,8 @@
 //
-//  AmericanExpressCreditCardFormat.swift
+//  UnknownCreditCardFormat.swift
 //  CreditCardFormatter
 //
-//  Created by barbarity on 11/09/2019.
+//  Created by barbarity on 06/10/2019.
 //  Copyright (c) 2019 Barbarity Apps
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,17 +26,24 @@
 
 import Foundation
 
-public extension CreditCardBrands {
-    static let americanExpress = "American Express"
+public enum CreditCardBrands {
+    static let unknown = "Unknown"
 }
 
-public struct AmericanExpressCreditCardFormat: CreditCardFormat {
-    public let blocks: [Int] = [4, 6, 5]
-    public let brand: String = CreditCardBrands.americanExpress
+struct UnknownCreditCardFormat: CreditCardFormat {
+    public let blocks: [Int] = [4]
+    public let brand: String = CreditCardBrands.unknown
+    var repeatLastBlock: Bool {
+        return true
+    }
 
     public init() {}
 
     public func shouldFormat(_ string: String) -> Bool {
-        return string.starts(with: "34") || string.starts(with: "37")
+        return true
+    }
+
+    public func isValid(_ string: String) -> Bool {
+        return false
     }
 }

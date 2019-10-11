@@ -3,7 +3,6 @@
 //  CreditCardFormatterTests
 //
 //  Created by barbarity on 05/09/2019.
-//
 //  Copyright (c) 2019 Barbarity Apps
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +28,7 @@ import XCTest
 import CreditCardFormatter
 
 final class CreditCardFormatterTests: XCTestCase {
-    var sut: CreditCardFormatter!
+    private var sut: CreditCardFormatter!
 
     override func setUp() {
         super.setUp()
@@ -73,15 +72,9 @@ final class CreditCardFormatterTests: XCTestCase {
         XCTAssert(sut.formattedString(from: "1289117385361319") == "1289 1173 8536 1319")
     }
 
-    func testStringsTooLongAreCut() {
-        XCTAssert(sut.formattedString(from: "12891173853613195") == "1289 1173 8536 1319")
-        XCTAssert(sut.formattedString(from: "12891173853613195123") == "1289 1173 8536 1319")
-        XCTAssert(sut.formattedString(from: "1289117385361319512354") == "1289 1173 8536 1319")
-    }
-
     func testWeirdCharactersDontAffectCount() {
-        XCTAssert(sut.formattedString(from: "128911738@53613195") == "1289 1173 8536 1319")
-        XCTAssert(sut.formattedString(from: "12dfgdf8911738@5361sdfds3195") == "1289 1173 8536 1319")
+        XCTAssert(sut.formattedString(from: "128911738@53613195") == "1289 1173 8536 1319 5")
+        XCTAssert(sut.formattedString(from: "12dfgdf8911738@5361sdfds3195") == "1289 1173 8536 1319 5")
     }
 
     func testDifferentDelimiter() {
@@ -100,15 +93,5 @@ final class CreditCardFormatterTests: XCTestCase {
         XCTAssert(sut.formattedString(from: "12891173853613") == "1289-1173-8536-13")
         XCTAssert(sut.formattedString(from: "128911738536131") == "1289-1173-8536-131")
         XCTAssert(sut.formattedString(from: "1289117385361319") == "1289-1173-8536-1319")
-    }
-
-    func testVISACardFormatter() {
-        XCTAssert(sut.formattedString(from: "4418895787771915") == "4418 8957 8777 1915")
-    }
-
-    func testVISACardValidity() {
-        let visaCardFormat = VISACreditCardFormat()
-
-        XCTAssert(visaCardFormat.isValid("4720165545628457"))
     }
 }

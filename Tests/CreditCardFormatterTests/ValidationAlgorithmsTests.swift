@@ -1,8 +1,8 @@
 //
-//  AmericanExpressCreditCardFormat.swift
-//  CreditCardFormatter
+//  ValidationAlgorithmsTests.swift
+//  CreditCardFormatterTests
 //
-//  Created by barbarity on 11/09/2019.
+//  Created by barbarity on 09/10/2019.
 //  Copyright (c) 2019 Barbarity Apps
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,19 +24,11 @@
 //  SOFTWARE.
 //
 
-import Foundation
+import XCTest
+import CreditCardFormatter
 
-public extension CreditCardBrands {
-    static let americanExpress = "American Express"
-}
-
-public struct AmericanExpressCreditCardFormat: CreditCardFormat {
-    public let blocks: [Int] = [4, 6, 5]
-    public let brand: String = CreditCardBrands.americanExpress
-
-    public init() {}
-
-    public func shouldFormat(_ string: String) -> Bool {
-        return string.starts(with: "34") || string.starts(with: "37")
+final class ValidationAlgorithmsTests: XCTestCase {
+    func testLuhnCheckWithInvalidDigit() {
+        XCTAssert(ValidationAlgorithms.luhnCheck("$") == false)
     }
 }

@@ -1,8 +1,8 @@
 //
-//  AmericanExpressCreditCardFormat.swift
+//  ValidationAlgorithms.swift
 //  CreditCardFormatter
 //
-//  Created by barbarity on 11/09/2019.
+//  Created by barbarity on 09/10/2019.
 //  Copyright (c) 2019 Barbarity Apps
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,17 +26,22 @@
 
 import Foundation
 
-public extension CreditCardBrands {
-    static let americanExpress = "American Express"
-}
-
-public struct AmericanExpressCreditCardFormat: CreditCardFormat {
-    public let blocks: [Int] = [4, 6, 5]
-    public let brand: String = CreditCardBrands.americanExpress
-
-    public init() {}
-
-    public func shouldFormat(_ string: String) -> Bool {
-        return string.starts(with: "34") || string.starts(with: "37")
+public enum ValidationAlgorithms {
+    public static func luhnCheck(_ string: String) -> Bool {
+        var sum = 0
+        for (idx, character) in string.reversed().enumerated() {
+            guard let digit = character.wholeNumberValue else { return false }
+            let isOdd = idx % 2 == 1
+            if isOdd {
+                if digit == 9 {
+                    sum += 9
+                } else {
+                    sum += (digit * 2) % 9
+                }
+            } else {
+                sum += digit
+            }
+        }
+        return sum % 10 == 0
     }
 }

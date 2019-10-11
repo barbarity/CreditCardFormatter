@@ -1,8 +1,8 @@
 //
-//  AmericanExpressCreditCardFormat.swift
+//  ChinaUnionPayCreditCardFormat.swift
 //  CreditCardFormatter
 //
-//  Created by barbarity on 11/09/2019.
+//  Created by barbarity on 07/10/2019.
 //  Copyright (c) 2019 Barbarity Apps
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,16 +27,25 @@
 import Foundation
 
 public extension CreditCardBrands {
-    static let americanExpress = "American Express"
+    static let chinaUnionPay = "China UnionPay"
 }
 
-public struct AmericanExpressCreditCardFormat: CreditCardFormat {
-    public let blocks: [Int] = [4, 6, 5]
-    public let brand: String = CreditCardBrands.americanExpress
+public struct ChinaUnionPayCreditCardFormat: CreditCardFormat {
+    public let blocks: [Int] = [4, 4, 4, 3]
+    public let brand: String = CreditCardBrands.chinaUnionPay
+
+    private let maxLength = 19
+    private let minLength = 13
 
     public init() {}
 
     public func shouldFormat(_ string: String) -> Bool {
-        return string.starts(with: "34") || string.starts(with: "37")
+        return string.starts(with: "62") || string.starts(with: "81")
+    }
+
+    public func isValid(_ string: String) -> Bool {
+        guard shouldFormat(string) else { return false }
+        guard string.count >= minLength, string.count <= maxLength else { return false }
+        return ValidationAlgorithms.luhnCheck(string)
     }
 }
