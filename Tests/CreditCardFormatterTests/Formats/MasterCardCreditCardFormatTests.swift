@@ -21,6 +21,10 @@ class MasterCardCreditCardFormatTests: XCTestCase {
         "5132331455922657"
     ]
 
+    private let invalidCreditCards = [
+        "519440063676702912"
+    ]
+
     private let validCreditCardsFormatted = [
         "5194 4006 3676 7029",
         "5507 6255 1487 4263",
@@ -55,6 +59,16 @@ class MasterCardCreditCardFormatTests: XCTestCase {
     }
 
     func testCorrectMasterCardCardsAreValid() {
-        validCreditCards.forEach { XCTAssert(sut.isValid($0)) }
+        validCreditCards.forEach { XCTAssert(sut.isValid($0), "\($0) is invalid") }
+    }
+
+    func testInCcorrectMasterCardCardsAreInvalid() {
+        invalidCreditCards.forEach { XCTAssert(!sut.isValid($0)) }
+    }
+
+    func testValidMasterCardCardsAreFormattedCorrectly() {
+        for (index, card) in validCreditCards.enumerated() {
+            XCTAssert(validCreditCardsFormatted[index] == sut.formattedString(from: card, delimiter: " "), "format for \(card) is wrong")
+        }
     }
 }
