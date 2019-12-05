@@ -4,7 +4,7 @@ A library for validating and formatting credit cards written in Swift.
 
 ## Features
 - [X] Credit card identifier.
-- [X] Credit card formatter based on the type of credit card.
+- [X] Credit card formatter based on the type of the credit card.
 - [X] Credit card number validator.
 - [X] All major credit card brands available.
 - [X] Possibility to add custom validators and formatters.

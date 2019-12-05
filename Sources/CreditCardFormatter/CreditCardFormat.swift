@@ -29,17 +29,12 @@ import Foundation
 public protocol CreditCardFormat {
     var blocks: [Int] { get }
     var brand: String { get }
-    var repeatLastBlock: Bool { get }
     func shouldFormat(_ string: String) -> Bool
     func isValid(_ string: String) -> Bool
 }
 
 public extension CreditCardFormat {
-    var repeatLastBlock: Bool {
-        return false
-    }
-
-    func formattedString(from string: String, delimiter: String) -> String {
+    func formattedString(from string: String, delimiter: String = " ", repeatLastBlock: Bool = true) -> String {
         var invertedBlocks = Array(blocks.reversed())
         var formattedString = ""
         var subIdx = 0

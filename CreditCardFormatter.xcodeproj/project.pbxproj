@@ -15,11 +15,14 @@
 		650342A6232849A000F5E01C /* CreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342A5232849A000F5E01C /* CreditCardFormat.swift */; };
 		650342A92329201500F5E01C /* VISACreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342A82329201500F5E01C /* VISACreditCardFormat.swift */; };
 		650342AB2329213700F5E01C /* AmericanExpressCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */; };
-		65CCBE65234A2B050072B498 /* VisaCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE64234A2B050072B498 /* VisaCreditCardFormatTests.swift */; };
+		658A37C42399B5F5001B79FE /* MasterCardCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A37C32399B5F5001B79FE /* MasterCardCreditCardFormat.swift */; };
+		658A37C62399BD09001B79FE /* MasterCardCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A37C52399BD09001B79FE /* MasterCardCreditCardFormatTests.swift */; };
+		65CCBE65234A2B050072B498 /* VISACreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE64234A2B050072B498 /* VISACreditCardFormatTests.swift */; };
 		65CCBE67234A2F0D0072B498 /* UnknownCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE66234A2F0D0072B498 /* UnknownCreditCardFormat.swift */; };
 		65CCBE69234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE68234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift */; };
 		65CCBE6B234D44FC0072B498 /* ValidationAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE6A234D44FC0072B498 /* ValidationAlgorithms.swift */; };
 		65CCBE6D234D45880072B498 /* ValidationAlgorithmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE6C234D45880072B498 /* ValidationAlgorithmsTests.swift */; };
+		65DE34132351018400B9F313 /* UnknownCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE34122351018400B9F313 /* UnknownCreditCardFormatTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,11 +48,14 @@
 		650342A5232849A000F5E01C /* CreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFormat.swift; sourceTree = "<group>"; };
 		650342A82329201500F5E01C /* VISACreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISACreditCardFormat.swift; sourceTree = "<group>"; };
 		650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericanExpressCreditCardFormat.swift; sourceTree = "<group>"; };
-		65CCBE64234A2B050072B498 /* VisaCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaCreditCardFormatTests.swift; sourceTree = "<group>"; };
+		658A37C32399B5F5001B79FE /* MasterCardCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardCreditCardFormat.swift; sourceTree = "<group>"; };
+		658A37C52399BD09001B79FE /* MasterCardCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardCreditCardFormatTests.swift; sourceTree = "<group>"; };
+		65CCBE64234A2B050072B498 /* VISACreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISACreditCardFormatTests.swift; sourceTree = "<group>"; };
 		65CCBE66234A2F0D0072B498 /* UnknownCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownCreditCardFormat.swift; sourceTree = "<group>"; };
 		65CCBE68234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinaUnionPayCreditCardFormat.swift; sourceTree = "<group>"; };
 		65CCBE6A234D44FC0072B498 /* ValidationAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlgorithms.swift; sourceTree = "<group>"; };
 		65CCBE6C234D45880072B498 /* ValidationAlgorithmsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlgorithmsTests.swift; sourceTree = "<group>"; };
+		65DE34122351018400B9F313 /* UnknownCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownCreditCardFormatTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 				65CCBE66234A2F0D0072B498 /* UnknownCreditCardFormat.swift */,
 				650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */,
 				65CCBE68234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift */,
+				658A37C32399B5F5001B79FE /* MasterCardCreditCardFormat.swift */,
 				650342A82329201500F5E01C /* VISACreditCardFormat.swift */,
 			);
 			path = Formats;
@@ -161,7 +168,9 @@
 		65CCBE63234A2ABA0072B498 /* Formats */ = {
 			isa = PBXGroup;
 			children = (
-				65CCBE64234A2B050072B498 /* VisaCreditCardFormatTests.swift */,
+				658A37C52399BD09001B79FE /* MasterCardCreditCardFormatTests.swift */,
+				65DE34122351018400B9F313 /* UnknownCreditCardFormatTests.swift */,
+				65CCBE64234A2B050072B498 /* VISACreditCardFormatTests.swift */,
 			);
 			path = Formats;
 			sourceTree = "<group>";
@@ -282,6 +291,7 @@
 				650342AB2329213700F5E01C /* AmericanExpressCreditCardFormat.swift in Sources */,
 				650342A42321B46B00F5E01C /* CreditCardFormatter.swift in Sources */,
 				650342A6232849A000F5E01C /* CreditCardFormat.swift in Sources */,
+				658A37C42399B5F5001B79FE /* MasterCardCreditCardFormat.swift in Sources */,
 				650342A92329201500F5E01C /* VISACreditCardFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,8 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65CCBE65234A2B050072B498 /* VisaCreditCardFormatTests.swift in Sources */,
+				65CCBE65234A2B050072B498 /* VISACreditCardFormatTests.swift in Sources */,
 				6503428E23212FE000F5E01C /* CreditCardFormatterTests.swift in Sources */,
+				65DE34132351018400B9F313 /* UnknownCreditCardFormatTests.swift in Sources */,
+				658A37C62399BD09001B79FE /* MasterCardCreditCardFormatTests.swift in Sources */,
 				65CCBE6D234D45880072B498 /* ValidationAlgorithmsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

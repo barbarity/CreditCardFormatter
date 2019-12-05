@@ -1,5 +1,5 @@
 //
-//  VisaCreditCardFormatTests.swift
+//  VISACreditCardFormatTests.swift
 //  CreditCardFormatterTests
 //
 //  Created by barbarity on 06/10/2019.
@@ -27,7 +27,7 @@
 import CreditCardFormatter
 import XCTest
 
-class VisaCreditCardFormatTests: XCTestCase {
+final class VISACreditCardFormatTests: XCTestCase {
     private var sut: VISACreditCardFormat!
 
     private let nonVISACards: [String] = [
@@ -80,6 +80,15 @@ class VisaCreditCardFormatTests: XCTestCase {
         "4244 2745 7368 1698",
     ]
 
+    private let shortCreditCards = [
+        "480070386324883",
+        "40857994822628",
+        "4205397653250",
+        "41014935483",
+        "4186203413",
+        "424427457",
+    ]
+
     override func setUp() {
         super.setUp()
         sut = VISACreditCardFormat()
@@ -94,20 +103,16 @@ class VisaCreditCardFormatTests: XCTestCase {
         XCTAssert(sut.brand == CreditCardBrands.visa)
     }
 
-    func testRepeatBlockIsFalse() {
-        XCTAssert(sut.repeatLastBlock == false)
-    }
-
     func testNonVISACreditCardsAreInvalid() {
-        nonVISACards.forEach { XCTAssert(!sut.isValid($0)) }
+        nonVISACards.forEach { XCTAssertFalse(sut.isValid($0)) }
     }
 
     func testNonVISACardsShouldntBeFormatted() {
-        nonVISACards.forEach { XCTAssert(!sut.shouldFormat($0)) }
+        nonVISACards.forEach { XCTAssertFalse(sut.shouldFormat($0)) }
     }
 
     func testVISACardsWithWrongCheckDigitAreInvalid() {
-        invalidCheckDigitCards.forEach { XCTAssert(!sut.isValid($0)) }
+        invalidCheckDigitCards.forEach { XCTAssertFalse(sut.isValid($0)) }
     }
 
     func testVISACardsWithWrongCheckDigitShouldFormat() {
@@ -128,5 +133,15 @@ class VisaCreditCardFormatTests: XCTestCase {
 
     func testCorrectVISACardsAreValid() {
         validCreditCards.forEach { XCTAssert(sut.isValid($0)) }
-    }    
+    }
+
+    // MARK: Short Credit Cards
+
+    func testShortCreditCardsShouldFormat() {
+        shortCreditCards.forEach { XCTAssert(sut.shouldFormat($0)) }
+    }
+
+    func testShortCreditCardsAreInvalid() {
+        shortCreditCards.forEach { XCTAssertFalse(sut.isValid($0)) }
+    }
 }

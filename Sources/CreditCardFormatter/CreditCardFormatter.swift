@@ -3,7 +3,6 @@
 //  CreditCardFormatter
 //
 //  Created by barbarity on 05/09/2019.
-//
 //  Copyright (c) 2019 Barbarity Apps
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,11 +26,19 @@
 
 import Foundation
 
+enum CreditCardFormatters {
+    static let general: [CreditCardFormat] = [VISACreditCardFormat(), AmericanExpressCreditCardFormat()]
+}
+
 public final class CreditCardFormatter {
-    public var delimiter: String = " "
+    public var delimiter: String
+    public var repeatLastBlock: Bool
     public var formatters: [CreditCardFormat] = [VISACreditCardFormat(), UnknownCreditCardFormat()]
 
-    public init() { }
+    public init(delimiter: String = " ", repeatLastBlock: Bool = true) {
+        self.delimiter = delimiter
+        self.repeatLastBlock = repeatLastBlock
+    }
 
     private func removeNonDecimalDigits(from string: String) -> String {
         let characterSet: CharacterSet = .decimalDigits

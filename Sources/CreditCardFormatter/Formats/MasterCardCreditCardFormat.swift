@@ -1,8 +1,8 @@
 //
-//  UnknownCreditCardFormat.swift
+//  MasterCardCreditCardFormat.swift
 //  CreditCardFormatter
 //
-//  Created by barbarity on 06/10/2019.
+//  Created by barbarity on 11/09/2019.
 //  Copyright (c) 2019 Barbarity Apps
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,21 +26,39 @@
 
 import Foundation
 
-public enum CreditCardBrands {
-    public static let unknown = "Unknown"
+public extension CreditCardBrands {
+    static let masterCard = "Master Card"
 }
 
-struct UnknownCreditCardFormat: CreditCardFormat {
-    public let blocks: [Int] = [4]
-    public let brand: String = CreditCardBrands.unknown
-
+public struct MasterCardCreditCardFormat: CreditCardFormat {
+    public let blocks: [Int] = [4, 4, 4, 4]
+    public let brand: String = CreditCardBrands.masterCard
+    
     public init() {}
-
+    
     public func shouldFormat(_ string: String) -> Bool {
-        return true
-    }
-
-    public func isValid(_ string: String) -> Bool {
+        let allowedRanges = [("2221", "2720"), ("51", "55")]
+        for allowedRange in allowedRanges {
+            if string.starts(between: allowedRange.0, and: allowedRange.1) {
+                return true
+            }
+        }
         return false
+    }
+}
+
+extension String {
+    func starts(between initial: String, and final: String) -> Bool {
+        let maxCount = max(initial.count, final.count)
+        guard
+            let initialNumber = Int(initial),
+            let finalNumber = Int(final),
+            let prefix = Int(self.prefix(maxCount))
+            else { return false }
+        
+        let initialNormalized = initialNumber * (maxCount - initial.count + 1)
+        let finalNormalized = finalNumber  * (maxCount - final.count + 1)
+        
+        return prefix >= initialNormalized && prefix <= finalNormalized
     }
 }

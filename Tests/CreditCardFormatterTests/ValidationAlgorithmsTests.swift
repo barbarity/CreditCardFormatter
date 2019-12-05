@@ -28,7 +28,11 @@ import XCTest
 import CreditCardFormatter
 
 final class ValidationAlgorithmsTests: XCTestCase {
-    func testLuhnCheckWithInvalidDigit() {
-        XCTAssert(ValidationAlgorithms.luhnCheck("$") == false)
+    func testLuhnCheckWithInvalidDigits() {
+        XCTAssertFalse(ValidationAlgorithms.luhnCheck("$"))
+        XCTAssertFalse(ValidationAlgorithms.luhnCheck("f7fs"))
+        XCTAssertFalse(ValidationAlgorithms.luhnCheck("7sdf7"))
+        XCTAssertFalse(ValidationAlgorithms.luhnCheck("0fds866;"))
+        XCTAssertFalse(ValidationAlgorithms.luhnCheck("e45bb54"))
     }
 }
