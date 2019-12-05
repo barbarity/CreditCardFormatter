@@ -20,6 +20,8 @@
 		65CCBE69234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE68234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift */; };
 		65CCBE6B234D44FC0072B498 /* ValidationAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE6A234D44FC0072B498 /* ValidationAlgorithms.swift */; };
 		65CCBE6D234D45880072B498 /* ValidationAlgorithmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE6C234D45880072B498 /* ValidationAlgorithmsTests.swift */; };
+		FF3E0A2F23997ADC0038D7F1 /* MasterCardCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3E0A2E23997ADC0038D7F1 /* MasterCardCreditCardFormat.swift */; };
+		FF3E0A3123997BE40038D7F1 /* MasterCardCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3E0A3023997BE40038D7F1 /* MasterCardCreditCardFormatTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		65CCBE68234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinaUnionPayCreditCardFormat.swift; sourceTree = "<group>"; };
 		65CCBE6A234D44FC0072B498 /* ValidationAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlgorithms.swift; sourceTree = "<group>"; };
 		65CCBE6C234D45880072B498 /* ValidationAlgorithmsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlgorithmsTests.swift; sourceTree = "<group>"; };
+		FF3E0A2E23997ADC0038D7F1 /* MasterCardCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardCreditCardFormat.swift; sourceTree = "<group>"; };
+		FF3E0A3023997BE40038D7F1 /* MasterCardCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardCreditCardFormatTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 				650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */,
 				65CCBE68234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift */,
 				650342A82329201500F5E01C /* VISACreditCardFormat.swift */,
+				FF3E0A2E23997ADC0038D7F1 /* MasterCardCreditCardFormat.swift */,
 			);
 			path = Formats;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				65CCBE64234A2B050072B498 /* VisaCreditCardFormatTests.swift */,
+				FF3E0A3023997BE40038D7F1 /* MasterCardCreditCardFormatTests.swift */,
 			);
 			path = Formats;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 				650342AB2329213700F5E01C /* AmericanExpressCreditCardFormat.swift in Sources */,
 				650342A42321B46B00F5E01C /* CreditCardFormatter.swift in Sources */,
 				650342A6232849A000F5E01C /* CreditCardFormat.swift in Sources */,
+				FF3E0A2F23997ADC0038D7F1 /* MasterCardCreditCardFormat.swift in Sources */,
 				650342A92329201500F5E01C /* VISACreditCardFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +300,7 @@
 				65CCBE65234A2B050072B498 /* VisaCreditCardFormatTests.swift in Sources */,
 				6503428E23212FE000F5E01C /* CreditCardFormatterTests.swift in Sources */,
 				65CCBE6D234D45880072B498 /* ValidationAlgorithmsTests.swift in Sources */,
+				FF3E0A3123997BE40038D7F1 /* MasterCardCreditCardFormatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
