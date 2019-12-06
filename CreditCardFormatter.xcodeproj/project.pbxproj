@@ -22,6 +22,7 @@
 		65CCBE69234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE68234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift */; };
 		65CCBE6B234D44FC0072B498 /* ValidationAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE6A234D44FC0072B498 /* ValidationAlgorithms.swift */; };
 		65CCBE6D234D45880072B498 /* ValidationAlgorithmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE6C234D45880072B498 /* ValidationAlgorithmsTests.swift */; };
+		65D0DD9A2399C7C300E6B465 /* DiscoverCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0DD992399C7C300E6B465 /* DiscoverCreditCardFormat.swift */; };
 		65DE34132351018400B9F313 /* UnknownCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE34122351018400B9F313 /* UnknownCreditCardFormatTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		65CCBE68234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinaUnionPayCreditCardFormat.swift; sourceTree = "<group>"; };
 		65CCBE6A234D44FC0072B498 /* ValidationAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlgorithms.swift; sourceTree = "<group>"; };
 		65CCBE6C234D45880072B498 /* ValidationAlgorithmsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlgorithmsTests.swift; sourceTree = "<group>"; };
+		65D0DD992399C7C300E6B465 /* DiscoverCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCreditCardFormat.swift; sourceTree = "<group>"; };
 		65DE34122351018400B9F313 /* UnknownCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownCreditCardFormatTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 				65CCBE66234A2F0D0072B498 /* UnknownCreditCardFormat.swift */,
 				650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */,
 				65CCBE68234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift */,
+				65D0DD992399C7C300E6B465 /* DiscoverCreditCardFormat.swift */,
 				658A37C32399B5F5001B79FE /* MasterCardCreditCardFormat.swift */,
 				650342A82329201500F5E01C /* VISACreditCardFormat.swift */,
 			);
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65D0DD9A2399C7C300E6B465 /* DiscoverCreditCardFormat.swift in Sources */,
 				65CCBE69234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift in Sources */,
 				65CCBE67234A2F0D0072B498 /* UnknownCreditCardFormat.swift in Sources */,
 				65CCBE6B234D44FC0072B498 /* ValidationAlgorithms.swift in Sources */,

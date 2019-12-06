@@ -26,14 +26,20 @@
 
 import Foundation
 
-enum CreditCardFormatters {
-    static let general: [CreditCardFormat] = [VISACreditCardFormat(), AmericanExpressCreditCardFormat()]
+public enum CreditCardFormatters {
+    public static let general: [CreditCardFormat] = [VISACreditCardFormat(),
+                                                     AmericanExpressCreditCardFormat(),
+                                                     MasterCardCreditCardFormat(),
+                                                     DiscoverCreditCardFormat()]
+    public static let all: [CreditCardFormat] = general + [ChinaUnionPayCreditCardFormat()]
 }
 
+/// A formatter that provides legible brand-specific representations of credit card numbers.
 public final class CreditCardFormatter {
     public var delimiter: String
     public var repeatLastBlock: Bool
-    public var formatters: [CreditCardFormat] = [VISACreditCardFormat(), UnknownCreditCardFormat()]
+    public var formatters: [CreditCardFormat] = CreditCardFormatters.general
+    private let unknownFormatter = UnknownCreditCardFormat()
 
     public init(delimiter: String = " ", repeatLastBlock: Bool = true) {
         self.delimiter = delimiter
@@ -45,19 +51,30 @@ public final class CreditCardFormatter {
         return string.removingCharacters(in: characterSet.inverted)
     }
 
-    private func selectFormatter(from string: String) -> CreditCardFormat? {
-        return formatters.first(where: { $0.shouldFormat(string) })
+    private func selectFormatter(from string: String) -> CreditCardFormat {
+        guard let formatter = formatters.first(where: { $0.shouldFormat(string) }) else { return unknownFormatter }
+        return formatter
+    }
+    
+    private func shouldRepeatLastBlock(for formatter: CreditCardFormat) -> Bool {
+        return repeatLastBlock || formatter.brand == unknownFormatter.brand
     }
 
     public func formattedString(from string: String) -> String {
         let strippedString = removeNonDecimalDigits(from: string)
-        guard let formatter = selectFormatter(from: strippedString) else { return strippedString }
-        return formatter.formattedString(from: strippedString, delimiter: delimiter)
+        let formatter = selectFormatter(from: strippedString)
+        return formatter.formattedString(from: strippedString, delimiter: delimiter, repeatLastBlock: shouldRepeatLastBlock(for: formatter))
+    }
+    
+    public func brand(from string: String) -> String {
+        let strippedString = removeNonDecimalDigits(from: string)
+        let formatter = selectFormatter(from: strippedString)
+        return formatter.brand
     }
 
     public func isValid(_ string: String) -> Bool {
         let strippedString = removeNonDecimalDigits(from: string)
-        guard let formatter = selectFormatter(from: strippedString) else { return false }
+        let formatter = selectFormatter(from: strippedString)
         return formatter.isValid(strippedString)
     }
 }

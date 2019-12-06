@@ -1,5 +1,5 @@
 //
-//  MasterCardCreditCardFormat.swift
+//  DiscoverCreditCardFormat.swift
 //  CreditCardFormatter
 //
 //  Created by barbarity on 06/12/2019.
@@ -27,38 +27,34 @@
 import Foundation
 
 public extension CreditCardBrands {
-    static let masterCard = "Master Card"
+    static let discover = "Discover"
 }
 
-public struct MasterCardCreditCardFormat: CreditCardFormat {
-    public let blocks: [Int] = [4, 4, 4, 4]
+public struct DiscoverCreditCardFormat: CreditCardFormat {
+    public let blocks: [Int] = [4, 4, 4, 4, 3]
     public let brand: String = CreditCardBrands.masterCard
+    
+    private let maxLength = 19
+    private let minLength = 16
     
     public init() {}
     
     public func shouldFormat(_ string: String) -> Bool {
-        let allowedRanges = [("2221", "2720"), ("51", "55")]
+        let allowedRanges = [("622126", "622925"),
+                             ("624000", "626999"),
+                             ("628200", "628899"),
+                             ("64", "65")]
         for allowedRange in allowedRanges {
             if string.starts(between: allowedRange.0, and: allowedRange.1) {
                 return true
             }
         }
-        return false
+        return string.starts(with: "6011")
     }
-}
-
-extension String {
-    func starts(between initial: String, and final: String) -> Bool {
-        let maxCount = max(initial.count, final.count)
-        guard
-            let initialNumber = Int(initial),
-            let finalNumber = Int(final),
-            let prefix = Int(self.prefix(maxCount))
-            else { return false }
-        
-        let initialNormalized = initialNumber * (maxCount - initial.count + 1)
-        let finalNormalized = finalNumber  * (maxCount - final.count + 1)
-        
-        return prefix >= initialNormalized && prefix <= finalNormalized
+    
+    public func isValid(_ string: String) -> Bool {
+        guard shouldFormat(string) else { return false }
+        guard string.count >= minLength, string.count <= maxLength else { return false }
+        return ValidationAlgorithms.luhnCheck(string)
     }
 }
