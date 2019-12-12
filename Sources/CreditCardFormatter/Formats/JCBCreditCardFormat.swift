@@ -1,8 +1,8 @@
 //
-//  ChinaUnionPayCreditCardFormat.swift
+//  JCBCreditCardFormat.swift
 //  CreditCardFormatter
 //
-//  Created by barbarity on 07/10/2019.
+//  Created by barbarity on 12/12/2019.
 //  Copyright (c) 2019 Barbarity Apps
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,22 +27,22 @@
 import Foundation
 
 public extension CreditCardBrands {
-    static let chinaUnionPay = "China UnionPay"
+    static let jcb = "JCB"
 }
 
-public struct ChinaUnionPayCreditCardFormat: CreditCardFormat {
-    public let blocks: [Int] = [4, 4, 4, 4]
-    public let brand: String = CreditCardBrands.chinaUnionPay
-
+public struct JCBCreditCardFormat: CreditCardFormat {
+    public let blocks: [Int] = [4, 4, 4, 4, 3]
+    public let brand: String = CreditCardBrands.jcb
+    
     private let maxLength = 19
-    private let minLength = 13
-
+    private let minLength = 16
+    
     public init() {}
-
+    
     public func shouldFormat(_ string: String) -> Bool {
-        return string.starts(with: "62") || string.starts(with: "81")
+        return string.starts(between: "3528", and: "3589")
     }
-
+    
     public func isValid(_ string: String) -> Bool {
         guard shouldFormat(string) else { return false }
         guard string.count >= minLength, string.count <= maxLength else { return false }

@@ -1,8 +1,8 @@
 //
-//  ChinaUnionPayCreditCardFormat.swift
+//  String+startsBetween.swift
 //  CreditCardFormatter
 //
-//  Created by barbarity on 07/10/2019.
+//  Created by barbarity on 12/12/2019.
 //  Copyright (c) 2019 Barbarity Apps
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,26 +26,18 @@
 
 import Foundation
 
-public extension CreditCardBrands {
-    static let chinaUnionPay = "China UnionPay"
-}
-
-public struct ChinaUnionPayCreditCardFormat: CreditCardFormat {
-    public let blocks: [Int] = [4, 4, 4, 4]
-    public let brand: String = CreditCardBrands.chinaUnionPay
-
-    private let maxLength = 19
-    private let minLength = 13
-
-    public init() {}
-
-    public func shouldFormat(_ string: String) -> Bool {
-        return string.starts(with: "62") || string.starts(with: "81")
-    }
-
-    public func isValid(_ string: String) -> Bool {
-        guard shouldFormat(string) else { return false }
-        guard string.count >= minLength, string.count <= maxLength else { return false }
-        return ValidationAlgorithms.luhnCheck(string)
+extension String {
+    func starts(between initial: String, and final: String) -> Bool {
+        let maxCount = max(initial.count, final.count)
+        guard
+            let initialNumber = Int(initial),
+            let finalNumber = Int(final),
+            let prefix = Int(self.prefix(maxCount))
+            else { return false }
+        
+        let initialNormalized = initialNumber * (maxCount - initial.count + 1)
+        let finalNormalized = finalNumber  * (maxCount - final.count + 1)
+        
+        return prefix >= initialNormalized && prefix <= finalNormalized
     }
 }

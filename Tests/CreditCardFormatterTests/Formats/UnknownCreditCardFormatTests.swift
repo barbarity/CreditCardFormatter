@@ -32,11 +32,13 @@ final class UnknownCreditCardFormatTests: XCTestCase {
     private var sut: UnknownCreditCardFormat!
 
     override func setUp() {
+        super.setUp()
         sut = UnknownCreditCardFormat()
     }
 
     override func tearDown() {
         sut = nil
+        super.tearDown()
     }
 
     func testUnknownBrandIsCorrect() {

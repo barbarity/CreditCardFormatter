@@ -28,9 +28,11 @@ import Foundation
 
 public enum CreditCardFormatters {
     public static let general: [CreditCardFormat] = [VISACreditCardFormat(),
-                                                     AmericanExpressCreditCardFormat(),
                                                      MasterCardCreditCardFormat(),
-                                                     DiscoverCreditCardFormat()]
+                                                     AmericanExpressCreditCardFormat(),
+                                                     DinersClubInternationalCreditCardFormat(),
+                                                     DiscoverCreditCardFormat(),
+                                                     JCBCreditCardFormat()]
     public static let all: [CreditCardFormat] = general + [ChinaUnionPayCreditCardFormat()]
 }
 

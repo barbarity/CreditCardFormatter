@@ -1,8 +1,8 @@
 //
-//  ChinaUnionPayCreditCardFormat.swift
+//  DinersClubInternationalCreditCardFormat.swift
 //  CreditCardFormatter
 //
-//  Created by barbarity on 07/10/2019.
+//  Created by barbarity on 12/12/2019.
 //  Copyright (c) 2019 Barbarity Apps
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,22 +27,28 @@
 import Foundation
 
 public extension CreditCardBrands {
-    static let chinaUnionPay = "China UnionPay"
+    static let dinersClubInternational = "Diners Club International"
 }
 
-public struct ChinaUnionPayCreditCardFormat: CreditCardFormat {
-    public let blocks: [Int] = [4, 4, 4, 4]
-    public let brand: String = CreditCardBrands.chinaUnionPay
-
+public struct DinersClubInternationalCreditCardFormat: CreditCardFormat {
+    public let blocks: [Int] = [4, 4, 4, 4, 3]
+    public let brand: String = CreditCardBrands.jcb
+    
     private let maxLength = 19
-    private let minLength = 13
-
+    private let minLength = 14
+    
     public init() {}
-
+    
     public func shouldFormat(_ string: String) -> Bool {
-        return string.starts(with: "62") || string.starts(with: "81")
+        let allowedRanges = [("300", "305"), ("38", "39")]
+        for allowedRange in allowedRanges {
+            if string.starts(between: allowedRange.0, and: allowedRange.1) {
+                return true
+            }
+        }
+        return string.starts(with: "36") || string.starts(with: "3095")
     }
-
+    
     public func isValid(_ string: String) -> Bool {
         guard shouldFormat(string) else { return false }
         guard string.count >= minLength, string.count <= maxLength else { return false }
