@@ -31,8 +31,8 @@ public extension CreditCardBrands {
 }
 
 public struct DinersClubInternationalCreditCardFormat: CreditCardFormat {
-    public let blocks: [Int] = [4, 4, 4, 4, 3]
-    public let brand: String = CreditCardBrands.jcb
+    public let blocks: [Int] = [4, 6, 4]
+    public let brand: String = CreditCardBrands.dinersClubInternational
     
     private let maxLength = 19
     private let minLength = 14

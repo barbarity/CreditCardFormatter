@@ -32,7 +32,7 @@ public extension CreditCardBrands {
 
 public struct DiscoverCreditCardFormat: CreditCardFormat {
     public let blocks: [Int] = [4, 4, 4, 4, 3]
-    public let brand: String = CreditCardBrands.masterCard
+    public let brand: String = CreditCardBrands.discover
     
     private let maxLength = 19
     private let minLength = 16

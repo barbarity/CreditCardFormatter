@@ -15,6 +15,8 @@
 		650342A6232849A000F5E01C /* CreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342A5232849A000F5E01C /* CreditCardFormat.swift */; };
 		650342A92329201500F5E01C /* VISACreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342A82329201500F5E01C /* VISACreditCardFormat.swift */; };
 		650342AB2329213700F5E01C /* AmericanExpressCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */; };
+		652B07B623A53B5C00E1E6EE /* DiscoverCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B07B523A53B5C00E1E6EE /* DiscoverCreditCardFormatTests.swift */; };
+		652B07B823A53B7200E1E6EE /* JCBCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B07B723A53B7200E1E6EE /* JCBCreditCardFormatTests.swift */; };
 		658A37C42399B5F5001B79FE /* MasterCardCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A37C32399B5F5001B79FE /* MasterCardCreditCardFormat.swift */; };
 		658A37C62399BD09001B79FE /* MasterCardCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A37C52399BD09001B79FE /* MasterCardCreditCardFormatTests.swift */; };
 		65949B8123A2F477006507F8 /* ChinaUnionPayCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65949B8023A2F477006507F8 /* ChinaUnionPayCreditCardFormatTests.swift */; };
@@ -28,6 +30,7 @@
 		65DE265C23A2FAAB00916E9C /* String+startsBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE265B23A2FAAB00916E9C /* String+startsBetween.swift */; };
 		65DE265E23A2FBA900916E9C /* JCBCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE265D23A2FBA900916E9C /* JCBCreditCardFormat.swift */; };
 		65DE266023A2FD8700916E9C /* DinersClubInternationalCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE265F23A2FD8700916E9C /* DinersClubInternationalCreditCardFormat.swift */; };
+		65DE266223A533B300916E9C /* DinersClubInternationalCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE266123A533B300916E9C /* DinersClubInternationalCreditCardFormatTests.swift */; };
 		65DE34132351018400B9F313 /* UnknownCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE34122351018400B9F313 /* UnknownCreditCardFormatTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,8 @@
 		650342A5232849A000F5E01C /* CreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFormat.swift; sourceTree = "<group>"; };
 		650342A82329201500F5E01C /* VISACreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISACreditCardFormat.swift; sourceTree = "<group>"; };
 		650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericanExpressCreditCardFormat.swift; sourceTree = "<group>"; };
+		652B07B523A53B5C00E1E6EE /* DiscoverCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCreditCardFormatTests.swift; sourceTree = "<group>"; };
+		652B07B723A53B7200E1E6EE /* JCBCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCBCreditCardFormatTests.swift; sourceTree = "<group>"; };
 		658A37C32399B5F5001B79FE /* MasterCardCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardCreditCardFormat.swift; sourceTree = "<group>"; };
 		658A37C52399BD09001B79FE /* MasterCardCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardCreditCardFormatTests.swift; sourceTree = "<group>"; };
 		65949B8023A2F477006507F8 /* ChinaUnionPayCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinaUnionPayCreditCardFormatTests.swift; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 		65DE265B23A2FAAB00916E9C /* String+startsBetween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+startsBetween.swift"; sourceTree = "<group>"; };
 		65DE265D23A2FBA900916E9C /* JCBCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCBCreditCardFormat.swift; sourceTree = "<group>"; };
 		65DE265F23A2FD8700916E9C /* DinersClubInternationalCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinersClubInternationalCreditCardFormat.swift; sourceTree = "<group>"; };
+		65DE266123A533B300916E9C /* DinersClubInternationalCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinersClubInternationalCreditCardFormatTests.swift; sourceTree = "<group>"; };
 		65DE34122351018400B9F313 /* UnknownCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownCreditCardFormatTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +192,9 @@
 			children = (
 				65D0DD9B239AE57C00E6B465 /* AmericanExpressCreditCardFormatTests.swift */,
 				65949B8023A2F477006507F8 /* ChinaUnionPayCreditCardFormatTests.swift */,
+				65DE266123A533B300916E9C /* DinersClubInternationalCreditCardFormatTests.swift */,
+				652B07B523A53B5C00E1E6EE /* DiscoverCreditCardFormatTests.swift */,
+				652B07B723A53B7200E1E6EE /* JCBCreditCardFormatTests.swift */,
 				658A37C52399BD09001B79FE /* MasterCardCreditCardFormatTests.swift */,
 				65DE34122351018400B9F313 /* UnknownCreditCardFormatTests.swift */,
 				65CCBE64234A2B050072B498 /* VISACreditCardFormatTests.swift */,
@@ -331,8 +340,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CCBE65234A2B050072B498 /* VISACreditCardFormatTests.swift in Sources */,
+				65DE266223A533B300916E9C /* DinersClubInternationalCreditCardFormatTests.swift in Sources */,
 				6503428E23212FE000F5E01C /* CreditCardFormatterTests.swift in Sources */,
 				65949B8123A2F477006507F8 /* ChinaUnionPayCreditCardFormatTests.swift in Sources */,
+				652B07B623A53B5C00E1E6EE /* DiscoverCreditCardFormatTests.swift in Sources */,
+				652B07B823A53B7200E1E6EE /* JCBCreditCardFormatTests.swift in Sources */,
 				65DE34132351018400B9F313 /* UnknownCreditCardFormatTests.swift in Sources */,
 				658A37C62399BD09001B79FE /* MasterCardCreditCardFormatTests.swift in Sources */,
 				65D0DD9C239AE57C00E6B465 /* AmericanExpressCreditCardFormatTests.swift in Sources */,

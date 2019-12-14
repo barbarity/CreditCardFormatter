@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "Joan Pérez" => "barbarityme@gmail.com" }
   spec.social_media_url   = "https://twitter.com/barbarityme"
   spec.platform     = :ios
-  spec.ios.deployment_target = "11.0"
+  spec.ios.deployment_target = "10.0"
   spec.source       = { :git => "https://github.com/barbarity/CreditCardFormatter.git", :tag => spec.version }
   spec.source_files 	= "Sources/*.swift"
 end
