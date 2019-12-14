@@ -3,7 +3,6 @@
 //  CreditCardFormatterTests
 //
 //  Created by barbarity on 05/09/2019.
-//
 //  Copyright (c) 2019 Barbarity Apps
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +28,7 @@ import XCTest
 import CreditCardFormatter
 
 final class CreditCardFormatterTests: XCTestCase {
-    var sut: CreditCardFormatter!
+    private var sut: CreditCardFormatter!
 
     override func setUp() {
         super.setUp()
@@ -73,30 +72,9 @@ final class CreditCardFormatterTests: XCTestCase {
         XCTAssert(sut.formattedString(from: "1289117385361319") == "1289 1173 8536 1319")
     }
 
-    func testStringsTooLongAreCut() {
-        XCTAssert(sut.formattedString(from: "12891173853613195") == "1289 1173 8536 1319")
-        XCTAssert(sut.formattedString(from: "12891173853613195123") == "1289 1173 8536 1319")
-        XCTAssert(sut.formattedString(from: "1289117385361319512354") == "1289 1173 8536 1319")
-    }
-
     func testWeirdCharactersDontAffectCount() {
-        XCTAssert(sut.formattedString(from: "128911738@53613195") == "1289 1173 8536 1319")
-        XCTAssert(sut.formattedString(from: "12dfgdf8911738@5361sdfds3195") == "1289 1173 8536 1319")
-    }
-
-    func testBlocksWithDifferentRange() {
-        sut.blocks = [1, 2, 3, 4]
-
-        XCTAssert(sut.formattedString(from: "1") == "1")
-        XCTAssert(sut.formattedString(from: "11") == "1 1")
-        XCTAssert(sut.formattedString(from: "112") == "1 12")
-        XCTAssert(sut.formattedString(from: "1121") == "1 12 1")
-        XCTAssert(sut.formattedString(from: "11212") == "1 12 12")
-        XCTAssert(sut.formattedString(from: "112123") == "1 12 123")
-        XCTAssert(sut.formattedString(from: "1121231") == "1 12 123 1")
-        XCTAssert(sut.formattedString(from: "11212312") == "1 12 123 12")
-        XCTAssert(sut.formattedString(from: "112123123") == "1 12 123 123")
-        XCTAssert(sut.formattedString(from: "1121231234") == "1 12 123 1234")
+        XCTAssert(sut.formattedString(from: "128911738@53613195") == "1289 1173 8536 1319 5")
+        XCTAssert(sut.formattedString(from: "12dfgdf8911738@5361sdfds3195") == "1289 1173 8536 1319 5")
     }
 
     func testDifferentDelimiter() {

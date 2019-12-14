@@ -3,7 +3,6 @@
 //  CreditCardFormatter
 //
 //  Created by barbarity on 05/09/2019.
-//
 //  Copyright (c) 2019 Barbarity Apps
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,35 +24,60 @@
 //  SOFTWARE.
 //
 
-public class CreditCardFormatter {
-    public var delimiter = " "
-    public var blocks: [Int] = [4, 4, 4, 4]
-    public var maxLength: Int {
-        return blocks.reduce(0, +)
+import Foundation
+
+public enum CreditCardFormatters {
+    public static let general: [CreditCardFormat] = [VISACreditCardFormat(),
+                                                     MasterCardCreditCardFormat(),
+                                                     AmericanExpressCreditCardFormat(),
+                                                     DinersClubInternationalCreditCardFormat(),
+                                                     DiscoverCreditCardFormat(),
+                                                     JCBCreditCardFormat()]
+    public static let all: [CreditCardFormat] = general + [ChinaUnionPayCreditCardFormat()]
+}
+
+/// A formatter that provides legible brand-specific representations of credit card numbers.
+public final class CreditCardFormatter {
+    public var delimiter: String
+    public var repeatLastBlock: Bool
+    public var formatters: [CreditCardFormat] = CreditCardFormatters.general
+    private let unknownFormatter = UnknownCreditCardFormat()
+
+    public init(delimiter: String = " ", repeatLastBlock: Bool = true) {
+        self.delimiter = delimiter
+        self.repeatLastBlock = repeatLastBlock
     }
 
-    public init() {}
+    private func removeNonDecimalDigits(from string: String) -> String {
+        let characterSet: CharacterSet = .decimalDigits
+        return string.removingCharacters(in: characterSet.inverted)
+    }
+
+    private func selectFormatter(from string: String) -> CreditCardFormat {
+        guard let formatter = formatters.first(where: { $0.shouldFormat(string) }) else { return unknownFormatter }
+        return formatter
+    }
+    
+    private func shouldRepeatLastBlock(for formatter: CreditCardFormat) -> Bool {
+        return repeatLastBlock || formatter.brand == unknownFormatter.brand
+    }
 
     public func formattedString(from string: String) -> String {
-        let characterSet: CharacterSet = .decimalDigits
-        let strippedString = string.removingCharacters(in: characterSet.inverted)
+        let strippedString = removeNonDecimalDigits(from: string)
+        let formatter = selectFormatter(from: strippedString)
+        return formatter.formattedString(from: strippedString, delimiter: delimiter, repeatLastBlock: shouldRepeatLastBlock(for: formatter))
+    }
+    
+    public func brand(from string: String) -> String {
+        let strippedString = removeNonDecimalDigits(from: string)
+        let formatter = selectFormatter(from: strippedString)
+        return formatter.brand
+    }
 
-        var invertedBlocks = Array(blocks.reversed())
-        var formattedString = ""
-        var subIdx = 0
-        guard var currentBlock = invertedBlocks.popLast() else { return formattedString }
-        for character in strippedString {
-            if subIdx == currentBlock {
-                guard let nextBlock = invertedBlocks.popLast() else { return formattedString }
-                formattedString.append(delimiter)
-                subIdx = 0
-                currentBlock = nextBlock
-            }
-            formattedString.append(character)
-            subIdx += 1
-        }
-
-        return formattedString
+    public func isValid(_ string: String) -> Bool {
+        let strippedString = removeNonDecimalDigits(from: string)
+        let formatter = selectFormatter(from: strippedString)
+        return formatter.isValid(strippedString)
     }
 }
 

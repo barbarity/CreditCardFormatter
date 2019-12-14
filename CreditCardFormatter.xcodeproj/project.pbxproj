@@ -12,6 +12,26 @@
 		6503429023212FE000F5E01C /* CreditCardFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503428223212FE000F5E01C /* CreditCardFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6503429B2321458500F5E01C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6503429A2321458500F5E01C /* README.md */; };
 		650342A42321B46B00F5E01C /* CreditCardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342A32321B46B00F5E01C /* CreditCardFormatter.swift */; };
+		650342A6232849A000F5E01C /* CreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342A5232849A000F5E01C /* CreditCardFormat.swift */; };
+		650342A92329201500F5E01C /* VISACreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342A82329201500F5E01C /* VISACreditCardFormat.swift */; };
+		650342AB2329213700F5E01C /* AmericanExpressCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */; };
+		652B07B623A53B5C00E1E6EE /* DiscoverCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B07B523A53B5C00E1E6EE /* DiscoverCreditCardFormatTests.swift */; };
+		652B07B823A53B7200E1E6EE /* JCBCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B07B723A53B7200E1E6EE /* JCBCreditCardFormatTests.swift */; };
+		658A37C42399B5F5001B79FE /* MasterCardCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A37C32399B5F5001B79FE /* MasterCardCreditCardFormat.swift */; };
+		658A37C62399BD09001B79FE /* MasterCardCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A37C52399BD09001B79FE /* MasterCardCreditCardFormatTests.swift */; };
+		65949B8123A2F477006507F8 /* ChinaUnionPayCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65949B8023A2F477006507F8 /* ChinaUnionPayCreditCardFormatTests.swift */; };
+		65CCBE65234A2B050072B498 /* VISACreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE64234A2B050072B498 /* VISACreditCardFormatTests.swift */; };
+		65CCBE67234A2F0D0072B498 /* UnknownCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE66234A2F0D0072B498 /* UnknownCreditCardFormat.swift */; };
+		65CCBE69234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE68234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift */; };
+		65CCBE6B234D44FC0072B498 /* ValidationAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE6A234D44FC0072B498 /* ValidationAlgorithms.swift */; };
+		65CCBE6D234D45880072B498 /* ValidationAlgorithmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBE6C234D45880072B498 /* ValidationAlgorithmsTests.swift */; };
+		65D0DD9A2399C7C300E6B465 /* DiscoverCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0DD992399C7C300E6B465 /* DiscoverCreditCardFormat.swift */; };
+		65D0DD9C239AE57C00E6B465 /* AmericanExpressCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0DD9B239AE57C00E6B465 /* AmericanExpressCreditCardFormatTests.swift */; };
+		65DE265C23A2FAAB00916E9C /* String+startsBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE265B23A2FAAB00916E9C /* String+startsBetween.swift */; };
+		65DE265E23A2FBA900916E9C /* JCBCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE265D23A2FBA900916E9C /* JCBCreditCardFormat.swift */; };
+		65DE266023A2FD8700916E9C /* DinersClubInternationalCreditCardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE265F23A2FD8700916E9C /* DinersClubInternationalCreditCardFormat.swift */; };
+		65DE266223A533B300916E9C /* DinersClubInternationalCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE266123A533B300916E9C /* DinersClubInternationalCreditCardFormatTests.swift */; };
+		65DE34132351018400B9F313 /* UnknownCreditCardFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE34122351018400B9F313 /* UnknownCreditCardFormatTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +54,26 @@
 		6503429A2321458500F5E01C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6503429F2321471B00F5E01C /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		650342A32321B46B00F5E01C /* CreditCardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFormatter.swift; sourceTree = "<group>"; };
+		650342A5232849A000F5E01C /* CreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFormat.swift; sourceTree = "<group>"; };
+		650342A82329201500F5E01C /* VISACreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISACreditCardFormat.swift; sourceTree = "<group>"; };
+		650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericanExpressCreditCardFormat.swift; sourceTree = "<group>"; };
+		652B07B523A53B5C00E1E6EE /* DiscoverCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCreditCardFormatTests.swift; sourceTree = "<group>"; };
+		652B07B723A53B7200E1E6EE /* JCBCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCBCreditCardFormatTests.swift; sourceTree = "<group>"; };
+		658A37C32399B5F5001B79FE /* MasterCardCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardCreditCardFormat.swift; sourceTree = "<group>"; };
+		658A37C52399BD09001B79FE /* MasterCardCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardCreditCardFormatTests.swift; sourceTree = "<group>"; };
+		65949B8023A2F477006507F8 /* ChinaUnionPayCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinaUnionPayCreditCardFormatTests.swift; sourceTree = "<group>"; };
+		65CCBE64234A2B050072B498 /* VISACreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISACreditCardFormatTests.swift; sourceTree = "<group>"; };
+		65CCBE66234A2F0D0072B498 /* UnknownCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownCreditCardFormat.swift; sourceTree = "<group>"; };
+		65CCBE68234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinaUnionPayCreditCardFormat.swift; sourceTree = "<group>"; };
+		65CCBE6A234D44FC0072B498 /* ValidationAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlgorithms.swift; sourceTree = "<group>"; };
+		65CCBE6C234D45880072B498 /* ValidationAlgorithmsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlgorithmsTests.swift; sourceTree = "<group>"; };
+		65D0DD992399C7C300E6B465 /* DiscoverCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCreditCardFormat.swift; sourceTree = "<group>"; };
+		65D0DD9B239AE57C00E6B465 /* AmericanExpressCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericanExpressCreditCardFormatTests.swift; sourceTree = "<group>"; };
+		65DE265B23A2FAAB00916E9C /* String+startsBetween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+startsBetween.swift"; sourceTree = "<group>"; };
+		65DE265D23A2FBA900916E9C /* JCBCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCBCreditCardFormat.swift; sourceTree = "<group>"; };
+		65DE265F23A2FD8700916E9C /* DinersClubInternationalCreditCardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinersClubInternationalCreditCardFormat.swift; sourceTree = "<group>"; };
+		65DE266123A533B300916E9C /* DinersClubInternationalCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinersClubInternationalCreditCardFormatTests.swift; sourceTree = "<group>"; };
+		65DE34122351018400B9F313 /* UnknownCreditCardFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownCreditCardFormatTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +134,12 @@
 		6503429C2321465B00F5E01C /* CreditCardFormatter */ = {
 			isa = PBXGroup;
 			children = (
-				6503429E2321467F00F5E01C /* Supporting Files */,
+				650342A5232849A000F5E01C /* CreditCardFormat.swift */,
 				650342A32321B46B00F5E01C /* CreditCardFormatter.swift */,
+				65CCBE6A234D44FC0072B498 /* ValidationAlgorithms.swift */,
+				65DE265A23A2FA8E00916E9C /* Extensions */,
+				650342A723291FEB00F5E01C /* Formats */,
+				6503429E2321467F00F5E01C /* Supporting Files */,
 			);
 			path = CreditCardFormatter;
 			sourceTree = "<group>";
@@ -104,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				6503428D23212FE000F5E01C /* CreditCardFormatterTests.swift */,
+				65CCBE6C234D45880072B498 /* ValidationAlgorithmsTests.swift */,
+				65CCBE63234A2ABA0072B498 /* Formats */,
 				650342A0232197BA00F5E01C /* Supporting Files */,
 			);
 			path = CreditCardFormatterTests;
@@ -124,6 +170,44 @@
 				6503428F23212FE000F5E01C /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		650342A723291FEB00F5E01C /* Formats */ = {
+			isa = PBXGroup;
+			children = (
+				650342AA2329213700F5E01C /* AmericanExpressCreditCardFormat.swift */,
+				65CCBE68234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift */,
+				65DE265F23A2FD8700916E9C /* DinersClubInternationalCreditCardFormat.swift */,
+				65D0DD992399C7C300E6B465 /* DiscoverCreditCardFormat.swift */,
+				65DE265D23A2FBA900916E9C /* JCBCreditCardFormat.swift */,
+				658A37C32399B5F5001B79FE /* MasterCardCreditCardFormat.swift */,
+				65CCBE66234A2F0D0072B498 /* UnknownCreditCardFormat.swift */,
+				650342A82329201500F5E01C /* VISACreditCardFormat.swift */,
+			);
+			path = Formats;
+			sourceTree = "<group>";
+		};
+		65CCBE63234A2ABA0072B498 /* Formats */ = {
+			isa = PBXGroup;
+			children = (
+				65D0DD9B239AE57C00E6B465 /* AmericanExpressCreditCardFormatTests.swift */,
+				65949B8023A2F477006507F8 /* ChinaUnionPayCreditCardFormatTests.swift */,
+				65DE266123A533B300916E9C /* DinersClubInternationalCreditCardFormatTests.swift */,
+				652B07B523A53B5C00E1E6EE /* DiscoverCreditCardFormatTests.swift */,
+				652B07B723A53B7200E1E6EE /* JCBCreditCardFormatTests.swift */,
+				658A37C52399BD09001B79FE /* MasterCardCreditCardFormatTests.swift */,
+				65DE34122351018400B9F313 /* UnknownCreditCardFormatTests.swift */,
+				65CCBE64234A2B050072B498 /* VISACreditCardFormatTests.swift */,
+			);
+			path = Formats;
+			sourceTree = "<group>";
+		};
+		65DE265A23A2FA8E00916E9C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				65DE265B23A2FAAB00916E9C /* String+startsBetween.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +320,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65D0DD9A2399C7C300E6B465 /* DiscoverCreditCardFormat.swift in Sources */,
+				65CCBE69234BB7DB0072B498 /* ChinaUnionPayCreditCardFormat.swift in Sources */,
+				65CCBE67234A2F0D0072B498 /* UnknownCreditCardFormat.swift in Sources */,
+				65CCBE6B234D44FC0072B498 /* ValidationAlgorithms.swift in Sources */,
+				65DE265E23A2FBA900916E9C /* JCBCreditCardFormat.swift in Sources */,
+				65DE265C23A2FAAB00916E9C /* String+startsBetween.swift in Sources */,
+				650342AB2329213700F5E01C /* AmericanExpressCreditCardFormat.swift in Sources */,
 				650342A42321B46B00F5E01C /* CreditCardFormatter.swift in Sources */,
+				650342A6232849A000F5E01C /* CreditCardFormat.swift in Sources */,
+				65DE266023A2FD8700916E9C /* DinersClubInternationalCreditCardFormat.swift in Sources */,
+				658A37C42399B5F5001B79FE /* MasterCardCreditCardFormat.swift in Sources */,
+				650342A92329201500F5E01C /* VISACreditCardFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +339,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65CCBE65234A2B050072B498 /* VISACreditCardFormatTests.swift in Sources */,
+				65DE266223A533B300916E9C /* DinersClubInternationalCreditCardFormatTests.swift in Sources */,
 				6503428E23212FE000F5E01C /* CreditCardFormatterTests.swift in Sources */,
+				65949B8123A2F477006507F8 /* ChinaUnionPayCreditCardFormatTests.swift in Sources */,
+				652B07B623A53B5C00E1E6EE /* DiscoverCreditCardFormatTests.swift in Sources */,
+				652B07B823A53B7200E1E6EE /* JCBCreditCardFormatTests.swift in Sources */,
+				65DE34132351018400B9F313 /* UnknownCreditCardFormatTests.swift in Sources */,
+				658A37C62399BD09001B79FE /* MasterCardCreditCardFormatTests.swift in Sources */,
+				65D0DD9C239AE57C00E6B465 /* AmericanExpressCreditCardFormatTests.swift in Sources */,
+				65CCBE6D234D45880072B498 /* ValidationAlgorithmsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -369,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -394,7 +498,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Sources/CreditCardFormatter/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,7 +526,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Sources/CreditCardFormatter/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
